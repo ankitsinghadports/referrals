@@ -1,8 +1,22 @@
 package com.risklab.referral.entity;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class InspectionTypeForYas {
+    @JsonProperty("caseTypes")
+    @JsonAlias("caseType")
+    private List<CaseTypes> caseTypes;
+    public List<CaseTypes> getCaseTypes() {
+        return caseTypes;
+    }
+
+    public void setCaseTypes(List<CaseTypes> caseTypes) {
+        this.caseTypes = caseTypes;
+    }
+
     private YASChannel channel;
     private String originalChannel;
     private String caseContext;
