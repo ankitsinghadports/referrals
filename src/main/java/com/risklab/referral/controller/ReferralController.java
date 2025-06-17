@@ -11,7 +11,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/referrals")
 public class ReferralController {
-    private Map<Long,ReferralEntity> referralsEntries = new HashMap<>();
+    private Map<String,ReferralEntity> referralsEntries = new HashMap<>();
 
     @GetMapping
     public List<ReferralEntity> getAllReferrals(){
@@ -20,7 +20,7 @@ public class ReferralController {
 
     @PostMapping
     public ReferralEntity createReferral(@RequestBody ReferralEntity referralEntity){
-        referralsEntries.put(referralEntity.getId(), referralEntity);
+        referralsEntries.put(referralEntity.getReferralId(), referralEntity);
         return referralEntity;
     }
 }
